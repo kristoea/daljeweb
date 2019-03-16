@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<header class="locked_header">
+    <div class="logo">
+        <a href="{% url "front_page" %}">
+            <img src={% static "/img/logotransparent.png"%}>
+        </a>
+    </div>
+
+    <nav class="menu_nav">
+        <ul>
+            <li>
+                <a href="{% url "magasin_overview" %}">A-Magasinet</a>
+                <ul>
+                    <li><a href="{% url "magasin_overview" %}#utgaver">Utgaver</a></li>
+                    <li><a href="{% url "magasin_overview" %}#moteguide">Moteguide</a></li>
+                    <li><a href="{% url "magasin_overview" %}#portfolio">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="bedrift.html">Bedrift</a>
+                <ul>
+                    <li><a href="bedrift.html#team">Hvem vi er</a></li>
+                    <li><a href="bedrift.html#ekspertise">Hva vi gjør</a></li>
+                    <li><a href="bedrift.html#karriere">Karriere</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="daljelearn.html">Daljelearn</a>
+                <ul>
+                    <li><a href="daljelearn.html#om">Om Daljelearn</a></li>
+                    <li><a href="daljelearn.html#daljelearn">Daljelearn</a></li>
+                    <li><a href="daljelearn.html#vilkar">Vilkår</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="empty_header"></div>
+
+
+<div class="main">
+    <a href="magasin/longstory.html">
+        <div class="story_container" style="background-image: url('../img/IMG_9840.jpg');">
+            <div class="center">
+                <h1>Daljeconsults guide til korrekt bekledning på bed.pres.</h1>
+                <p>A-magasinet</p>
+                <p> / </p>
+                <p>02.12.2018</p>
+            </div>
+        </div>
+    </a>
+
+    <div class="coverstory">
+        <div class="hide" style="height:18px;"></div>
+        <div class="coverstory_container">
+            <a href="magasin/longstory.html">
+                <div class="coverstory_content">
+
+                    <div class="coverstory_text">
+                        <div class="coverstory_text_center">
+                            <h3 class="c">Cover story</h3>
+                            <h2 class="c">Silius M. Vandeskog om vestnorsk gin, studentermote og matematikk</h2>
+                            <h3 class="c">Les intervjuet med A-magasinets cover star</h3>
+                        </div>
+                    </div>
+                    <div class="coverstory_img" style="background-image: url('../img/IMG_8400.jpg');"></div>
+
+                    <svg class="triangle" width="20px" height="30px" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="0,0 0,30 20,15" style="fill:#ffffff;" />
+                    </svg>
+                    <svg class="triangle2" width="30px" height="20px" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="0,20 30,20 15,0" style="fill:#ffffff;" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="hide" style="height:18px;"></div>
+    </div>
+
+    <a href="magasin/longstory.html">
+        <div class="story_container" style="background-image: url('../img/IMG_7576.jpg');">
+            <div class="center">
+                <h1>Homme: Mouchior de poche et médailles</h1>
+                <p>A-magasinet</p>
+                <p> / </p>
+                <p>02.12.18</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="magasin/longstory.html">
+        <div class="story_container" style="background-image: url('../img/IMG_8310.jpg');">
+            <div class="center">
+                <h1>5 daljer alle burde ha i garderoben</h1>
+                <p>A-magasinet</p>
+                <p> / </p>
+                <p>02.12.18</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+{% endblock content %}

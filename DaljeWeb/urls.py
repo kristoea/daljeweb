@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+
+from core.views import FrontPageView
 
 urlpatterns = [
+    url(r'^$', FrontPageView.as_view(), name='front_page'),
+    url(r'^magasin/', include('magasin.urls')),
     path('admin/', admin.site.urls),
 ]

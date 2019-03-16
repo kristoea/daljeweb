@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block more_head %}
+<script src={% static  "/js/navbar_longstory.js"%}></script>
+<script>
+$(document).ready(function() {
+    if (window.location.href.indexOf("moteguide") > -1){
+        $('.moteguide').toggle("show");
+        $("#button_text").text("Moteguide");
+    } else if (window.location.href.indexOf("portfolio") > -1) {
+        $('.portfolio').toggle("show");
+        $("#button_text").text("Portfolio");
+    } else {
+        $('.utgaver').toggle("show");
+        $("#button_text").text("Utgaver");
+    }
+});
+
+</script>
+{% endblock more_head %}
+
+{% block content %}
+
+<div class="main">
+    <div class="top_image" style="background-image: url('../img/IMG_9840.jpg');">
+        <div class="center">
+            <h1>A-magasinet</h1>
+        </div>
+        <button class="scroll_down" onclick="scroll_down($('.story'))">
+            <svg style="width:70px;height:70px;position: absolute;top:0;left:0;" viewBox="0 0 100 100">
+                <circle fill="white" cx="50" cy="50" r="50">
+            </svg>
+            <svg style="width:70px;height:70px;position: absolute;top:0;left:0;" viewBox="0 0 100 100">
+                <g fill="none" stroke="black" fill-rule="evenodd">
+                    <path d="M 35 35 L 50 50 L 65 35" stroke-width="3"></path>
+                </g>
+            </svg>
+        </button>
+    </div>
+
+
+    <div class="story">
+        <h3 class="lead">Suspendisse eleifend, felis vitae dictum egestas, erat dolor scelerisque massa, pretium
+            ultricies diam sem vitae elit. Scelerisque massa, pretium ultricies diam sem vitae elit.
+        </h3>
+        <p>Curabitur at purus nec erat varius volutpat sit amet sit amet neque. Nullam dolor lacus, laoreet
+            non dolor eu, consectetur auctor velit. Suspendisse eleifend, felis vitae dictum egestas, erat dolor
+            scelerisque massa, pretium ultricies diam sem vitae elit. Amet neque. Nullam dolor lacus, laoreet.
+            Curabitur at purus nec erat varius volutpat sit amet sit amet neque. Nullam dolor lacus, laoreet
+            non dolor eu, consectetur auctor velit. Suspendisse eleifend, felis vitae dictum egestas, erat dolor
+            scelerisque massa, pretium ultricies diam sem vitae elit.
+        </p>
+    </div>
+
+    <div class="dropdown">
+        <button id="button" onclick="dropdown()">
+                <h3 id="button_text">Dropdown</h3>
+                <svg id="svg" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none" stroke="black" fill-rule="evenodd">
+                        <path class="pathclose" id="pathd1" d="M 4 8 L 11 18 L 18 8" stroke-width="3"></path>
+                    </g>
+                </svg>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+            <button onclick="drop($('.utgaver'),'Utgaver','#utgaver')"><h3>Utgaver</h3></button>
+            <button onclick="drop($('.moteguide'),'Moteguide','#moteguide')"><h3>Moteguide</h3></button>
+            <button onclick="drop($('.portfolio'),'Portfolio','#portfolio')"><h3>Portfolio</h3></button>
+        </div>
+    </div>
+
+
+    <!--Utgaver-->
+    <div id="utgaver" class="utgaver" style="display: none;">
+        <div class="story">
+            <a href="magasin/utgave.html">
+                <div class="story_container2" style="background-image: url('../img/daljemidje.jpg');">
+                    <div class="center">
+                        <h2>Høst 2018</h2>
+                        <p>A-magasinet</p>
+                        <p> / </p>
+                        <p>02.12.2018</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--Moteguide-->
+    <div id="moteguide" class="moteguide" style="display: none;">
+        <div class="story">
+            <a href="magasin/longstory.html">
+                <div class="story_container2" style="background-image: url('../img/IMG_9840.jpg');">
+                    <div class="center">
+                        <h2>Daljeconsults guide til korrekt bekledning på bedriftspresentasjon</h2>
+                        <p>A-magasinet</p>
+                        <p> / </p>
+                        <p>02.12.2018</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="magasin/longstory.html">
+                <div class="story_container2" style="background-image: url('../img/IMG_7576.jpg');">
+                    <div class="center">
+                        <h2>Homme: Mouchior de poche et médailles</h2>
+                        <p>A-magasinet</p>
+                        <p> / </p>
+                        <p>02.12.2018</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!--Portfolio-->
+    <div id="portfolio" class="portfolio" style="display: none;">
+        <div class="story">
+            <a href="magasin/portfolio.html">
+                <div class="story_container2" style="background-image: url('../img/IMG_9840.jpg');">
+                    <div class="center">
+                        <h2>Nablas 75-årsjubileum</h2>
+                        <p>Portfolio</p>
+                        <p> / </p>
+                        <p>02.12.2018</p>
+                    </div>
+                </div>
+            </a>
+            <a href="magasin/olbryggerlauget.html">
+                <div class="story_container2" style="background-image: url('../img/nablaug_barrel.jpg');">
+                    <div class="center">
+                        <h2>Nablas Ølbryggerlaugs 5-årsjubileum</h2>
+                        <p>Portfolio</p>
+                        <p> / </p>
+                        <p>02.12.2018</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

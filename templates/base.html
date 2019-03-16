@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{% block title %}Daljeconsult{% endblock title %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src={% static "/js/jquery-2.1.4.js"%}></script>
+<script src={% static "/js/navbar.js"%}></script>
+<link rel="stylesheet" href={% static "/css/framework.css"%}>
+<link rel="icon" type="image/png" href={% static "/img/dalje_favicon.png"%}>
+
+{% block more_head %}{% endblock more_head %}
+
+</head>
+<body>
+
+<div class="wrapper">
+
+{% block content %}{% endblock content %}
+
+<!--Footer-->
+<footer>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=OT3UQRMb4nE">
+            <div class="social_media">
+
+                <svg class="clip_svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="47">
+                </svg>
+
+                <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="some_circle" cx="19" cy="19" r="17.5"></circle>
+                    <path class="some_path" d="M 17.06 26 v -8.48 h -1.34 V 15.5 h 1.34 v -.76
+                        c 0-1.18.3-2.06.86-2.62 s 1.34-.84 2.38-.84 c .84 0 1.42.12 1.96.28 v 2.04 c -.48
+                        -.16-.9-.26-1.42-.26-.92 0-1.4.5-1.4 1.6 v .58 h 2.8 v 2 h-2.76 V 26 h -2.42 z"></path>
+                </svg>
+
+
+            </div>
+        </a></li>
+
+        <li><a href="https://www.youtube.com/watch?v=OT3UQRMb4nE">
+            <div class="social_media">
+                <svg class="clip_svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="47">
+                </svg>
+                <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="some_circle" cx="19" cy="19" r="17.5"></circle>
+                    <path class="some_path" d="M12.746 24V11.4h2.214V24h-2.214zm5.328 0v-9.504h2.178v1.476c.612-.9 1.494-1.674 2.97-1.674
+                    2.142 0 3.384 1.44 3.384 3.654V24h-2.178v-5.4c0-1.476-.738-2.322-2.034-2.322-1.26 0-2.142.882-2.142
+                    2.358V24h-2.178z"></path>
+                </svg>
+            </div>
+        </a></li>
+
+        <li><a href="https://www.youtube.com/watch?v=OT3UQRMb4nE">
+            <div class="social_media">
+                <svg class="clip_svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="47">
+                </svg>
+
+                <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="some_circle" cx="19" cy="19" r="17.5"></circle>
+                    <g transform="translate(9 9)">
+                        <circle class="some_stroke" stroke-width="1.5" cx="10" cy="10" r="3.375"></circle>
+                        <circle class="some_fill" cx="15.125" cy="5.125" r="1.5"></circle>
+                        <rect class="some_stroke" stroke-width="1.5" x=".75" y=".75" width="18.5" height="18.5" rx="4"></rect>
+                    </g>
+                </svg>
+            </div>
+        </a></li>
+
+        <li><a href="https://www.youtube.com/watch?v=OT3UQRMb4nE">
+            <div class="social_media">
+                <svg class="clip_svg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="47">
+                </svg>
+                <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="some_circle" cx="19" cy="19" r="17.5"></circle>
+                    <g transform="translate(8 11)">
+                        <rect class="some_stroke" stroke-width="1.5" x=".75" y=".75" width="20.5" height="14.5" rx="4"></rect>
+                        <path class="some_fill" d="M9 4v8l5-4z"></path>
+                    </g>
+                </svg>
+            </div>
+        </a></li>
+    </ul>
+
+    <div class="footer_text">
+        <p>Daljeconsult er Gløshaugens største haute couture-hus og arbeider for å informere NTNU-studenter om de viktigste nyhetene innen
+            daljemote, daljekultur og studentergalla. Daljeconsult arbeider etter Vær Varsom-plakatens regler for god presseskikk. Daljeconsult
+            har ikke ansvar for innhold på eksterne nettsider som det lenkes til.</p>
+    </div>
+</footer>
+
+<!--Floating header-->
+<header class="float_header">
+    <div class="logo">
+        <a href="{% url "front_page" %}" class="ab-logo">
+            <img src={% static "/img/logotransparent.png"%}>
+        </a>
+    </div>
+
+    <nav class="menu_nav">
+        <ul>
+            <li>
+                <a href="{% url "magasin_overview" %}">A-Magasinet</a>
+                <ul>
+                    <li><a {% if magasin %}onclick="drop($('.utgaver'),'Utgaver','#utgaver')"
+                           {% else %}href="{% url "magasin_overview" %}#utgaver"{% endif %}>Utgaver</a></li>
+                    <li><a {% if magasin %}onclick="drop($('.moteguide'),'Moteguide','#moteguide')"
+                           {% else %}href="{% url "magasin_overview" %}#moteguide"{% endif %}>Moteguide</a></li>
+                    <li><a {% if magasin %}onclick="drop($('.portfolio'),'Portfolio','#portfolio')"
+                           {% else %}href="{% url "magasin_overview" %}#portfolio"{% endif %}>Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="bedrift.html">Bedrift</a>
+                <ul>
+                    <li><a href="bedrift.html#team">Hvem vi er</a></li>
+                    <li><a href="bedrift.html#ekspertise">Hva vi gjør</a></li>
+                    <li><a href="bedrift.html#karriere">Karriere</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="daljelearn.html">Daljelearn</a>
+                <ul>
+                    <li><a href="daljelearn.html#om">Om Daljelearn</a></li>
+                    <li><a href="daljelearn.html#daljelearn">Daljelearn</a></li>
+                    <li><a href="daljelearn.html#vilkar">Vilkår</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<header class="opacity_header">
+    <nav class="menu_nav">
+        <ul>
+            <li>
+                <a href="magasin.html">A-Magasinet</a>
+                <ul>
+                    <li><a href="magasin.html#utgaver">Utgaver</a></li>
+                    <li><a href="magasin.html#moteguide">Moteguide</a></li>
+                    <li><a href="magasin.html#portfolio">Portfolio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="bedrift.html">Bedrift</a>
+                <ul>
+                    <li><a href="bedrift.html#team">Hvem vi er</a></li>
+                    <li><a href="bedrift.html#ekspertise">Hva vi gjør</a></li>
+                    <li><a href="bedrift.html#karriere">Karriere</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="daljelearn.html">Daljelearn</a>
+                <ul>
+                    <li><a href="daljelearn.html#om">Om Daljelearn</a></li>
+                    <li><a href="daljelearn.html#daljelearn">Daljelearn</a></li>
+                    <li><a href="daljelearn.html#vilkar">Vilkår</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+</div>
+
+<button id="nav_button" class="f_show" onclick="f_show()">
+    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="black" fill-rule="evenodd">
+            <circle cx="25" cy="25" r="23.5" style="fill:white"/>
+            <path id="path1" d="M 10 18 L 40 18"></path>
+            <path id="path2" d="M 10 25 L 30 25"></path>
+            <path id="path3" d="M 10 32 L 40 32"></path>
+        </g>
+    </svg>
+</button>
+
+</body>
+</html>
